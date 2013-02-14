@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<meta charset=utf-8 />
+    <title>Display a Counter</title>
+    <style type="text/css">
+        #displayCounter{
+        font-size:42px;
+        font-family:Georgia;
+        }
+    </style>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+   <script type="text/javascript">
+        $(function() {
+            var cnt = 0;
+            var counter = setInterval(function() {
+                if (cnt < 20) {
+                    $('#displayCounter').html(cnt);
+                    cnt++;
+                }
+                else {
+                clearInterval(counter);
+                $('#displayCounter').html("Timeout!!");
+                }
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <div id="displayCounter"></div>
+    <div id="hello"></div>
+</body>
+</html>
